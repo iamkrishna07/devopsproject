@@ -1,0 +1,21 @@
+name: Simple CI Pipeline
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Display current date and time
+        run: date
+
+      - name: Display repository files
+        run: ls -la
+
+      - name: Display success message
+        run: echo "CI Pipeline Executed Successfully"
