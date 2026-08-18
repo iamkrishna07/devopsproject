@@ -1,0 +1,23 @@
+name: Basic Deployment
+
+on:
+  push:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Display deployment start
+        run: echo "Deployment Started"
+
+      - name: Copy project files to deployment folder
+        run: |
+          mkdir -p deployment
+          cp -r . deployment/
+
+      - name: Display deployment completion
+        run: echo "Deployment Completed Successfully"
